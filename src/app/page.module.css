@@ -1,0 +1,267 @@
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(0, 168, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 245, 255, 0.05) 0%, transparent 50%);
+}
+
+.heroContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.heroHighlight {
+    color: var(--accent-blue);
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+.heroSubtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+}
+
+.heroButtons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.heroVisual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visualCard {
+    background: rgba(22, 27, 42, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.visualCard:before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(transparent, rgba(0, 168, 255, 0.3), transparent 30%);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate { 100% { transform: rotate(360deg); } }
+
+.visualGraphic {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.graphicElement {
+    position: relative;
+    width: 80px; height: 80px;
+    background: rgba(0, 168, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary-blue);
+}
+
+.graphicElement svg {
+    font-size: 2rem;
+    color: var(--accent-blue);
+}
+
+.pulse {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--accent-blue);
+    animation: pulse 2s infinite;
+}
+
+.delay1 { animation-delay: 0.5s; }
+.delay2 { animation-delay: 1s; }
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Features */
+.features {
+    padding: 80px 0;
+    background-color: var(--secondary-dark);
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.featureCard {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.featureCard:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-blue);
+    box-shadow: 0 15px 30px rgba(0, 168, 255, 0.2);
+}
+
+.featureCard:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+}
+
+.featureIcon {
+    width: 60px; height: 60px;
+    background: linear-gradient(135deg, rgba(0, 168, 255, 0.1), rgba(0, 245, 255, 0.05));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.featureIcon svg {
+    font-size: 1.8rem;
+    color: var(--accent-blue);
+}
+
+.featureLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+    color: var(--primary-blue);
+    font-weight: 500;
+    transition: gap 0.3s ease;
+}
+
+.featureLink:hover { gap: 10px; }
+
+/* Workflow */
+.workflow {
+    padding: 80px 0;
+    background-color: var(--primary-dark);
+}
+
+.workflowSteps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.workflowSteps:before {
+    content: '';
+    position: absolute;
+    top: 40px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue), var(--primary-blue));
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    z-index: 1;
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+}
+
+.stepNumber {
+    width: 50px; height: 50px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.stepContent h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.stepContent p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+    .heroContainer { grid-template-columns: 1fr; text-align: center; }
+    .heroButtons { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .heroTitle { font-size: 2.5rem; }
+    .featuresGrid { grid-template-columns: 1fr; }
+    .visualGraphic { flex-direction: column; gap: 30px; }
+    .workflowSteps { grid-template-columns: 1fr; }
+    .workflowSteps:before { display: none; }
+}
+
+@media (max-width: 480px) {
+    .hero { padding: 40px 0; }
+    .heroTitle { font-size: 2rem; }
+    .heroSubtitle { font-size: 1rem; }
+    .heroButtons { flex-direction: column; align-items: center; }
+    .visualCard { padding: 20px; }
+}
